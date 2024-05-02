@@ -9,4 +9,4 @@ commands to run it locally.
 <p align="center">
     <img src="https://media.geeksforgeeks.org/wp-content/uploads/20230914185841/redis-publish-subscriber.png" width="350" title="hover text"/>
 </p>
-give it  a star
+Give it a star ⭐️
