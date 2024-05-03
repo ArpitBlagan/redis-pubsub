@@ -1,10 +1,14 @@
-import express from "express";
+import express, { Request, Response } from "express";
 import http from "http";
 import { WebSocketServer } from "ws";
 import { Pubsub } from "./pubsubManager";
 const app = express();
 const server = http.createServer(app);
 const wss = new WebSocketServer({ server });
+
+app.get("/get", async (req: Request, res: Response) => {
+  res.status(200).json({ message: "working..." });
+});
 
 wss.on("connection", (ws, req) => {
   ws.on("message", (data: any) => {
@@ -25,5 +29,5 @@ wss.on("connection", (ws, req) => {
   });
 });
 server.listen(8000, () => {
-  console.log(`${Date.now()} server listening on port 8000`);
+  console.log(`${Date.now().toLocaleString()} server listening on port 8000`);
 });
