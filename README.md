@@ -1,4 +1,4 @@
-commands to run it locally with out Docker.
+commands to run it locally without Docker.
 
 ```bash
     npm install
@@ -8,20 +8,15 @@ commands to run it locally with out Docker.
 
 with Docker
 
-<ul>
-    <li>
-    ```bash
-        docker network create custom
-    ```
-    </li>
-    <li>
-    ```bash
-        docker build . -t redis-web
-        docker run -d -p 6379:6379 --network custom --name my-redis redis
-        docker run -d -p 8000:8000 --network custom --name img-redis-web redis-web
-    ```
-    </li>
-</ul>
+```bash
+    docker network create custom
+```
+
+```bash
+    docker build . -t redis-web
+    docker run -d -p 6379:6379 --network custom --name my-redis redis
+    docker run -d -p 8000:8000 --network custom --name img-redis-web redis-web
+```
 
 <p align="center">
     <img src="https://media.geeksforgeeks.org/wp-content/uploads/20230914185841/redis-publish-subscriber.png" width="350" title="hover text"/>
